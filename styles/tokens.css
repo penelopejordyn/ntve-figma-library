@@ -1,0 +1,236 @@
+/*
+ * NTVE component-library tokens
+ * Canonical target: 13-inch iPad landscape, System theme, Light appearance.
+ * Values mirror the SwiftUI design system and editor layout policy.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Core color roles */
+  --color-background: #ffffff;
+  --color-foreground: #0d0d0d;
+  --color-primary-foreground: #ffffff;
+  --color-card: #ffffff;
+  --color-popover: #fcfcfc;
+  --color-secondary: #f9f9f9;
+  --color-muted: #f9f9f9;
+  --color-muted-foreground: #414141;
+  --color-accent: #ededed;
+  --color-border: #ededed;
+  --color-input: #ededed;
+  --color-ring: #0080bd;
+  --color-brand-blue: #05bdf5;
+  --color-destructive: #fa423e;
+  --color-warning: #ffc300;
+  --color-success: #04b84c;
+  --color-addition: #04b84c;
+  --color-addition-foreground: #00a240;
+  --color-deletion: #fa423e;
+  --color-deletion-foreground: #e02e2a;
+
+  /* Sidebar roles. System accent #0080BD mixed 70% toward white. */
+  --color-sidebar: #ffffff;
+  --color-sidebar-foreground: #212121;
+  --color-sidebar-accent: #b3d9eb;
+  --color-sidebar-accent-fallback: #a8ddf7;
+  --color-sidebar-selection: rgb(179 217 235 / 35%);
+  --color-sidebar-selection-on-white: #e4f2f8;
+
+  /* Tool/category accents */
+  --color-tool-explore: var(--color-muted-foreground);
+  --color-tool-edit: #f59e0b;
+  --color-tool-run: #3b82f6;
+  --color-tool-web: #0ea5e9;
+
+  /* System-theme material color layers (placed over ultra-thin material). */
+  --surface-body-tint: rgb(255 255 255 / 0%);
+  --surface-sidebar-tint: rgb(255 255 255 / 18%);
+  --surface-standard-tint: rgb(255 255 255 / 55%);
+  --surface-elevated-tint: rgb(255 255 255 / 55%);
+  --surface-card-tint: rgb(255 255 255 / 88%);
+  --surface-content-tint: rgb(255 255 255 / 80%);
+  --surface-material-blur: 20px;
+  --surface-material-saturation: 180%;
+
+  /* Common translucent treatments */
+  --color-scrim-command: rgb(0 0 0 / 35%);
+  --color-scrim-library: rgb(0 0 0 / 16%);
+  --color-divider: rgb(237 237 237 / 75%);
+  --color-panel-border: rgb(237 237 237 / 70%);
+  --color-shell-border: rgb(237 237 237 / 72%);
+  --color-control-border: rgb(237 237 237 / 60%);
+  --color-panel-controls: rgb(249 249 249 / 28%);
+  --color-unselected-control: rgb(255 255 255 / 45%);
+  --color-chat-canvas: rgb(255 255 255 / 34%);
+  --color-chat-canvas-border: rgb(237 237 237 / 35%);
+  --color-grid-line: rgb(237 237 237 / 24%);
+  --color-preview-banner: #f9f9f9;
+  --color-warning-soft: rgb(255 195 0 / 14%);
+  --color-destructive-soft: rgb(250 66 62 / 10%);
+
+  /* Typography: iPadOS system faces. */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
+  --font-family-rounded: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, monospace;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-micro: 10px;
+  --font-size-tiny: 12px;
+  --font-size-xs: 14px;
+  --font-size-small: 16px;
+  --font-size-body: 17px;
+  --font-size-heading: 18px;
+  --font-size-title: 20px;
+  --font-size-display: 46px;
+  --font-size-mono: 13px;
+  --font-size-code: 14px;
+  --font-size-code-gutter: 12px;
+  --line-height-xs: 20px;
+  --line-height-small: 24px;
+  --line-height-body: 26px;
+  --letter-spacing-display: -1.2px;
+  --letter-spacing-kicker: 1.1px;
+  --letter-spacing-eyebrow: 0.9px;
+  --letter-spacing-optional: 0.8px;
+
+  /* Spacing scale */
+  --space-xs: 6px;
+  --space-sm: 10px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --page-padding-phone: 16px;
+  --page-padding-tablet: 24px;
+  --page-padding-wide: 32px;
+  --panel-padding: 24px;
+
+  /* Radius scale */
+  --radius-control: 8px;
+  --radius-small: 10px;
+  --radius-appbar-icon: 12px;
+  --radius-metric: 14px;
+  --radius-medium: 16px;
+  --radius-rail-item: 18px;
+  --radius-large: 24px;
+  --radius-content: 24px;
+  --radius-pill: 28px;
+  --radius-chat-canvas: 32px;
+  --radius-round: 999px;
+
+  /* Canonical landscape canvas and shell */
+  --canvas-width: 1376px;
+  --canvas-height: 1032px;
+  --app-bar-height: 68px;
+  --navigation-rail-width: 84px;
+  --library-drawer-width: 360px;
+  --compact-dock-height: 64px;
+  --shell-gap: 8px;
+  --shell-edge-inset: 10px;
+  --control-height: 48px;
+  --minimum-touch-target: 44px;
+  --wordmark-width: 70px;
+  --wordmark-height: 20px;
+  --wordmark-compact-width: 40px;
+  --wordmark-compact-height: 11px;
+  --rail-wordmark-slot-width: 56px;
+  --rail-wordmark-slot-height: 48px;
+  --rail-item-height: 58px;
+
+  /* Responsive thresholds from PalotLayout. */
+  --breakpoint-phone: 620px;
+  --breakpoint-rail: 700px;
+  --breakpoint-panel-controls-session: 768px;
+  --breakpoint-wide-canvas: 980px;
+  --breakpoint-expansive-canvas: 1280px;
+
+  /* Shared Open/Preview panel geometry. */
+  --panel-width-ratio: 0.4;
+  --panel-width-default: 40%;
+  --panel-width-ratio-min: 0.06;
+  --panel-width-ratio-max: 0.93;
+  --panel-width-min: 80px;
+  --panel-resize-hit-width: 12px;
+  --panel-resize-grip-width: 4px;
+  --panel-resize-grip-active-width: 5px;
+  --panel-resize-grip-height: 44px;
+  --panel-keyboard-resize-step: 5%;
+
+  /* Code editor workspace */
+  --editor-activity-rail-width: 44px;
+  --editor-separator-width: 1px;
+  --editor-navigator-default-min: 160px;
+  --editor-navigator-default-max: 240px;
+  --editor-navigator-default-ratio: 0.2;
+  --editor-navigator-resize-min: 40px;
+  --editor-content-width-ratio-min: 0.58;
+  --editor-compact-navigator-ratio-max: 0.45;
+  --editor-compact-navigator-width-max: 340px;
+  --editor-quick-open-height: 64px;
+  --editor-tab-height: 44px;
+  --editor-file-row-height: 44px;
+  --editor-search-height: 48px;
+  --editor-quick-open-row-height: 52px;
+  --editor-quick-open-results-height-max: 312px;
+
+  /* Command palette */
+  --command-palette-width-max: 640px;
+  --command-palette-results-height: 360px;
+  --command-palette-search-height: 48px;
+  --command-palette-row-height: 44px;
+  --command-palette-row-detail-height: 52px;
+  --command-palette-top-ratio: 0.333333;
+
+  /* Home and agent-view constraints */
+  --home-content-width-max: 1280px;
+  --home-side-column-width-max: 360px;
+  --home-side-column-ratio: 0.32;
+  --home-grid-size: 28px;
+  --home-composer-height: 62px;
+  --home-composer-height-max: 280px;
+  --home-suggestion-card-height-min: 142px;
+  --home-suggestion-card-compact-height-min: 66px;
+  --chat-column-width-max: 800px;
+  --chat-composer-width-max: 840px;
+  --chat-canvas-width-max: 960px;
+
+  /* Elevation */
+  --shadow-shell: 0 6px 18px rgb(0 0 0 / 8%);
+  --shadow-library-drawer: 10px 0 28px rgb(0 0 0 / 24%);
+  --shadow-composer: 0 8px 18px rgb(0 0 0 / 6%);
+  --shadow-composer-focus: 0 8px 18px rgb(0 0 0 / 10%);
+  --shadow-field: 0 1px 1px rgb(0 0 0 / 6%);
+  --shadow-popover: 0 4px 12px rgb(0 0 0 / 12%);
+  --shadow-floating-control: 0 4px 12px rgb(0 0 0 / 10%);
+  --shadow-toast: 0 5px 14px rgb(0 0 0 / 16%);
+
+  /* Motion. Bounce values preserve the native spring specifications. */
+  --motion-duration-fast: 220ms;
+  --motion-duration-standard: 380ms;
+  --motion-duration-relaxed: 520ms;
+  --motion-bounce-fast: 0.08;
+  --motion-bounce-standard: 0.1;
+  --motion-bounce-relaxed: 0.08;
+  --motion-ease-spring: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* State opacity */
+  --opacity-disabled: 0.5;
+  --opacity-disabled-submit: 0.42;
+  --opacity-pressed: 0.82;
+  --opacity-muted-label: 0.7;
+
+  /* CodeEdit-derived Light syntax colors. */
+  --syntax-base: #0d0d0d;
+  --syntax-comment: #707f8c;
+  --syntax-string: #d12f1b;
+  --syntax-character: #272ad8;
+  --syntax-number: #272ad8;
+  --syntax-keyword: #ad3da4;
+  --syntax-attribute: #947100;
+  --syntax-type: #02638c;
+  --syntax-variable: #057cb0;
+  --syntax-command: #3f8087;
+  --syntax-value: #804fb8;
+}

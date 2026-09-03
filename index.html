@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>NTVE Component Library · Light Landscape</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+      <defs>
+        <symbol id="i-library" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="8" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="15" width="7" height="6" rx="1.5"/></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
+        <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1v.1h-4v-.1a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1-.4h-.1v-4H3A1.7 1.7 0 0 0 4.6 8.5a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1v-.1h4V3A1.7 1.7 0 0 0 15.5 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.16.36.37.7.6 1 .27.28.63.42 1 .4h.1v4H21a1.7 1.7 0 0 0-1.6.6Z"/></symbol>
+        <symbol id="i-collapse" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+        <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.1 3.2a4 4 0 0 0 2.7 2.7L19 10l-3.2 1.1a4 4 0 0 0-2.7 2.7L12 17l-1.1-3.2a4 4 0 0 0-2.7-2.7L5 10l3.2-1.1a4 4 0 0 0 2.7-2.7L12 3Z"/><path d="m19 16 .5 1.4a2 2 0 0 0 1.1 1.1L22 19l-1.4.5a2 2 0 0 0-1.1 1.1L19 22l-.5-1.4a2 2 0 0 0-1.1-1.1L16 19l1.4-.5a2 2 0 0 0 1.1-1.1L19 16Z"/></symbol>
+        <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M9 12h6M9 16h6"/></symbol>
+        <symbol id="i-preview" viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 21h14V9M8 17v4"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M10 5h4M11 19h2"/></symbol>
+        <symbol id="i-run" viewBox="0 0 24 24"><rect x="5" y="2" width="10" height="20" rx="2.5"/><path d="m14 9 5 3-5 3z"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+        <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h12l3 3v15H4V3z"/><path d="M8 3v6h8V3M8 21v-7h8v7"/></symbol>
+        <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 8.5A7 7 0 0 1 18.5 7L20 12M4 12l1.5 5A7 7 0 0 0 18 15.5"/></symbol>
+        <symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 4H4v5M15 4h5v5M20 15v5h-5M4 15v5h5"/></symbol>
+        <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+        <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+        <symbol id="i-chevron-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+        <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6h7l2 2h9v11H3z"/></symbol>
+        <symbol id="i-command" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3z"/></symbol>
+        <symbol id="i-hammer" viewBox="0 0 24 24"><path d="m14 5 5 5M12 7l5 5M13 4l7 7-3 3-7-7zM11 10 4 17a2.1 2.1 0 0 0 3 3l7-7"/></symbol>
+        <symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M8.3 14.5A7 7 0 1 1 15.7 14.5C14.8 15.2 14 16 14 18h-4c0-2-.8-2.8-1.7-3.5Z"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+        <symbol id="i-wand" viewBox="0 0 24 24"><path d="m4 20 11-11M13 5l2-2 6 6-2 2zM5 4v3M3.5 5.5h3M18 16v4M16 18h4"/></symbol>
+        <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+        <symbol id="i-sidebar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"/></symbol>
+        <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></symbol>
+        <symbol id="i-thumb" viewBox="0 0 24 24"><path d="M7 10v10H3V10zM7 18c2 0 3 2 6 2h3a2 2 0 0 0 2-1.6l1.2-6A2 2 0 0 0 17.2 10H14l.7-3.5A2.9 2.9 0 0 0 12 3l-1 4-4 5"/></symbol>
+        <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1" fill="currentColor" stroke="none"/></symbol>
+        <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+        <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18h1.5a1.5 1.5 0 0 0 0-3H12a2 2 0 0 1 0-4h4a5 5 0 0 0 0-10.2A9 9 0 0 0 12 3Z"/><circle cx="7.5" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="6.5" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="7" r="1" fill="currentColor" stroke="none"/></symbol>
+      </defs>
+    </svg>
+
+    <main class="library-page">
+      <header class="library-cover" id="overview" data-component="Documentation/Cover">
+        <div class="library-cover__top">
+          <img class="cover-mark" src="assets/ntve-wordmark.svg" alt="ntve." />
+          <span class="cover-badge">v1 · Light / Landscape</span>
+        </div>
+        <h1>NTVE component library</h1>
+        <p>A source-matched visual system for bringing the NTVE iPad app into Figma. It separates the shell, navigation, views, overlays, panels, states, and reusable controls while preserving the native landscape proportions.</p>
+        <div class="cover-meta" aria-label="Library attributes">
+          <span>1376 × 1032</span>
+          <span>Light mode</span>
+          <span>HTML + CSS</span>
+          <span>Panel prototype</span>
+        </div>
+      </header>
+
+      <nav class="library-nav" aria-label="Library sections">
+        <span>Overview</span>
+        <span>Foundations</span>
+        <span>Controls</span>
+        <span>Navigation</span>
+        <span>Overlays</span>
+        <span>Views</span>
+        <span>Panels</span>
+        <span>Compositions</span>
+      </nav>
+
+      <section class="library-section" id="foundations" data-component="Foundations">
+        <div class="section-heading">
+          <div><span class="section-kicker">01 / Foundations</span><h2>Light-mode foundations</h2></div>
+          <p>These values mirror the Swift theme. Every specimen below consumes these shared roles so the library stays coherent when imported or rebuilt as Figma variables.</p>
+        </div>
+
+        <article class="spec-board" data-component="Foundations/Color">
+          <div class="spec-header"><div><h3>Semantic color</h3><p>The native app is quiet and nearly monochrome; blue is reserved for focus, selection, and system emphasis.</p></div><span class="spec-badge">10 core roles</span></div>
+          <div class="swatch-grid">
+            <div class="color-swatch" style="--swatch:#ffffff"><div class="color-swatch__label"><strong>Background</strong><code>#FFFFFF</code></div></div>
+            <div class="color-swatch" style="--swatch:#0d0d0d"><div class="color-swatch__label"><strong>Foreground</strong><code>#0D0D0D</code></div></div>
+            <div class="color-swatch" style="--swatch:#f9f9f9"><div class="color-swatch__label"><strong>Muted</strong><code>#F9F9F9</code></div></div>
+            <div class="color-swatch" style="--swatch:#ededed"><div class="color-swatch__label"><strong>Border / Accent</strong><code>#EDEDED</code></div></div>
+            <div class="color-swatch" style="--swatch:#0080bd"><div class="color-swatch__label"><strong>System accent</strong><code>#0080BD</code></div></div>
+            <div class="color-swatch" style="--swatch:#b3d9eb"><div class="color-swatch__label"><strong>Sidebar accent</strong><code>#B3D9EB</code></div></div>
+            <div class="color-swatch" style="--swatch:#05bdf5"><div class="color-swatch__label"><strong>Brand blue</strong><code>#05BDF5</code></div></div>
+            <div class="color-swatch" style="--swatch:#04b84c"><div class="color-swatch__label"><strong>Success</strong><code>#04B84C</code></div></div>
+            <div class="color-swatch" style="--swatch:#ffc300"><div class="color-swatch__label"><strong>Warning</strong><code>#FFC300</code></div></div>
+            <div class="color-swatch" style="--swatch:#fa423e"><div class="color-swatch__label"><strong>Destructive</strong><code>#FA423E</code></div></div>
+          </div>
+        </article>
+
+        <article class="spec-board" data-component="Foundations/Typography-Spacing">
+          <div class="spec-grid">
+            <div class="spec-cell spec-cell--8">
+              <span class="spec-label">Typography / SF system</span>
+              <div class="type-sample"><span class="type-sample__name">Display</span><span class="type-sample__text--display">What do you want to make?</span><span class="type-sample__value">46 / 600</span></div>
+              <div class="type-sample"><span class="type-sample__name">Heading</span><span class="type-sample__text--heading">Brief the agent</span><span class="type-sample__value">18 / 600</span></div>
+              <div class="type-sample"><span class="type-sample__name">Body</span><span class="type-sample__text--body">Describe the app, change, or idea you want to explore.</span><span class="type-sample__value">17 / 26</span></div>
+              <div class="type-sample"><span class="type-sample__name">Mono</span><span class="type-sample__text--mono">ContentView.swift · 13:42</span><span class="type-sample__value">13 / mono</span></div>
+            </div>
+            <div class="spec-cell spec-cell--4">
+              <span class="spec-label">Spacing / base units</span>
+              <div class="token-bars">
+                <span class="token-bar" style="--size:42px">6</span>
+                <span class="token-bar" style="--size:52px">10</span>
+                <span class="token-bar" style="--size:66px">16</span>
+                <span class="token-bar" style="--size:88px">24</span>
+                <span class="token-bar" style="--size:110px">32</span>
+              </div>
+              <span class="spec-label" style="margin-top:28px">Radius / 10 · 16 · 24 · 28</span>
+              <div class="spec-row">
+                <span style="width:48px;height:48px;border:1px solid var(--color-border);border-radius:10px;background:#fff"></span>
+                <span style="width:48px;height:48px;border:1px solid var(--color-border);border-radius:16px;background:#fff"></span>
+                <span style="width:48px;height:48px;border:1px solid var(--color-border);border-radius:24px;background:#fff"></span>
+                <span style="width:70px;height:48px;border:1px solid var(--color-border);border-radius:28px;background:#fff"></span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="library-section" id="controls" data-component="Components/Controls">
+        <div class="section-heading">
+          <div><span class="section-kicker">02 / Components</span><h2>Controls and states</h2></div>
+          <p>Component names and state labels are written to transfer cleanly into Figma sets. Controls are deliberately inert on this documentation canvas.</p>
+        </div>
+
+        <article class="spec-board" data-component="Button">
+          <div class="spec-header"><div><h3>Button</h3><p>Primary, outline, secondary, ghost, destructive, and disabled treatments.</p></div><span class="spec-badge">Style × State</span></div>
+          <div class="spec-grid">
+            <div class="spec-cell spec-cell--6"><span class="spec-label">Style / Primary · Outline · Secondary</span><div class="spec-row">
+              <button class="ntve-button" tabindex="-1"><svg class="icon"><use href="#i-plus"/></svg>New Task</button>
+              <button class="ntve-button ntve-button--outline" tabindex="-1"><svg class="icon"><use href="#i-folder"/></svg>Add Project</button>
+              <button class="ntve-button ntve-button--secondary" tabindex="-1">Review changes</button>
+            </div></div>
+            <div class="spec-cell spec-cell--6"><span class="spec-label">Style / Ghost · Destructive · Disabled</span><div class="spec-row">
+              <button class="ntve-button ntve-button--ghost" tabindex="-1">Cancel</button>
+              <button class="ntve-button ntve-button--destructive" tabindex="-1">Delete task</button>
+              <button class="ntve-button is-disabled" tabindex="-1">Create</button>
+            </div></div>
+          </div>
+        </article>
+
+        <article class="spec-board" data-component="Shell-Controls">
+          <div class="spec-header"><div><h3>Shell controls</h3><p>The 36-point landscape app-bar actions, active panel controls, and the requested Run dropdown.</p></div><span class="spec-badge">Default · Selected · Menu</span></div>
+          <div class="spec-grid">
+            <div class="spec-cell spec-cell--5"><span class="spec-label">Panel toggle / Default · Selected</span><div class="spec-row">
+              <button class="shell-toggle" tabindex="-1"><svg class="icon icon--16"><use href="#i-file"/></svg>Open</button>
+              <button class="shell-toggle is-selected" tabindex="-1"><svg class="icon icon--16"><use href="#i-file"/></svg>Open<span class="shell-toggle__close">×</span></button>
+              <button class="shell-toggle" tabindex="-1"><svg class="icon icon--16"><use href="#i-preview"/></svg>Preview</button>
+              <button class="shell-toggle is-selected" tabindex="-1"><svg class="icon icon--16"><use href="#i-preview"/></svg>Preview<span class="shell-toggle__close">×</span></button>
+            </div></div>
+            <div class="spec-cell spec-cell--4"><span class="spec-label">Panel actions / Open · Preview</span><div class="spec-stack">
+              <div class="toolbar-group" aria-label="Open panel controls">
+                <button class="icon-button" tabindex="-1" aria-label="Save"><svg class="icon icon--16"><use href="#i-save"/></svg></button>
+                <button class="icon-button" tabindex="-1" aria-label="Refresh"><svg class="icon icon--16"><use href="#i-refresh"/></svg></button>
+                <button class="icon-button" tabindex="-1" aria-label="Expand"><svg class="icon icon--16"><use href="#i-expand"/></svg></button>
+              </div>
+              <div class="toolbar-group" aria-label="Preview panel controls">
+                <button class="icon-button" tabindex="-1" aria-label="Reload"><svg class="icon icon--16"><use href="#i-refresh"/></svg></button>
+                <button class="icon-button" tabindex="-1" aria-label="Expand"><svg class="icon icon--16"><use href="#i-expand"/></svg></button>
+              </div>
+            </div></div>
+            <div class="spec-cell spec-cell--3"><span class="spec-label">Icon button / 36 · 44</span><div class="spec-row">
+              <button class="icon-button icon-button--outline" tabindex="-1"><svg class="icon"><use href="#i-search"/></svg></button>
+              <button class="icon-button icon-button--muted icon-button--round" tabindex="-1"><svg class="icon"><use href="#i-plus"/></svg></button>
+            </div></div>
+            <div class="spec-cell spec-cell--5"><span class="spec-label">Run dropdown / Closed</span><div class="spec-row">
+              <button class="shell-toggle" tabindex="-1"><svg class="icon icon--16"><use href="#i-run"/></svg>Run<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button>
+            </div></div>
+            <div class="spec-cell spec-cell--4"><span class="spec-label">Resize handle / Idle</span><div class="spec-row"><span class="resize-handle-sample" aria-hidden="true"></span><span style="color:var(--color-muted-foreground);font-size:14px">12 px target<br />4 × 44 px grip</span></div></div>
+            <div class="spec-cell spec-cell--3" style="min-height:240px"><span class="spec-label">Run dropdown / Open</span>
+              <div class="run-dropdown-demo" data-component="Run-Dropdown/State=Open">
+                <button class="shell-toggle is-selected" tabindex="-1"><svg class="icon icon--16"><use href="#i-run"/></svg>Run<svg class="icon icon--16"><use href="#i-chevron-up"/></svg></button>
+                <div class="run-menu">
+                  <div class="run-menu__label">Run</div>
+                  <div class="run-menu__item is-selected"><span class="run-menu__icon"><svg class="icon icon--16"><use href="#i-preview"/></svg></span><span>Preview</span><svg class="icon icon--16 run-menu__check"><use href="#i-check"/></svg></div>
+                  <div class="run-menu__item"><span class="run-menu__icon"><svg class="icon icon--16"><use href="#i-phone"/></svg></span><span>Run on Device</span><span></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="spec-board" data-component="App-Bar">
+          <div class="spec-header"><div><h3>App bar</h3><p>Create and Agent identities share the same right-side workspace controls at landscape widths.</p></div><span class="spec-badge">Route / Create · Agent</span></div>
+          <div class="spec-stack">
+            <div class="mini-preview mini-app-bar">
+              <div class="app-bar" style="position:relative">
+                <div class="app-bar__identity"><span class="app-bar__icon-tile"><svg class="icon icon--20"><use href="#i-sparkles"/></svg></span><div class="app-bar__copy"><div class="app-bar__title">Create</div><div class="app-bar__subtitle">Background Agent Counter</div></div></div>
+                <div class="app-bar__actions"><button class="shell-toggle" tabindex="-1"><svg class="icon icon--16"><use href="#i-file"/></svg>Open</button><button class="shell-toggle" tabindex="-1"><svg class="icon icon--16"><use href="#i-preview"/></svg>Preview</button><button class="shell-toggle" tabindex="-1"><svg class="icon icon--16"><use href="#i-run"/></svg>Run<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button></div>
+              </div>
+            </div>
+            <div class="mini-preview mini-app-bar">
+              <div class="app-bar" style="position:relative">
+                <div class="app-bar__identity"><span class="status-dot"></span><div class="app-bar__copy"><div class="app-bar__title">Build a focus dashboard</div><div class="app-bar__subtitle">Background Agent Counter · Agent working</div></div></div>
+                <div class="app-bar__actions"><div class="app-bar__action-block"><button class="shell-toggle is-selected" tabindex="-1"><svg class="icon icon--16"><use href="#i-file"/></svg>Open<span class="shell-toggle__close">×</span></button><div class="toolbar-group"><button class="icon-button" tabindex="-1"><svg class="icon icon--16"><use href="#i-save"/></svg></button><button class="icon-button" tabindex="-1"><svg class="icon icon--16"><use href="#i-refresh"/></svg></button><button class="icon-button" tabindex="-1"><svg class="icon icon--16"><use href="#i-expand"/></svg></button></div></div><button class="shell-toggle is-selected" tabindex="-1"><svg class="icon icon--16"><use href="#i-preview"/></svg>Preview<span class="shell-toggle__close">×</span></button><button class="shell-toggle" tabindex="-1"><svg class="icon icon--16"><use href="#i-run"/></svg>Run<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="library-section" id="navigation" data-component="Components/Navigation">
+        <div class="section-heading">
+          <div><span class="section-kicker">03 / Navigation</span><h2>Rail and Library</h2></div>
+          <p>The persistent 84-point rail anchors every landscape view. The 360-point Library is represented both as reusable rows and in its complete overlay composition.</p>
+        </div>
+
+        <article class="spec-board" data-component="Navigation-Rail">
+          <div class="spec-header"><div><h3>Navigation rail</h3><p>Library, Create, Search, and shell-level controls. Settings remains a visual shell item; its destination view is intentionally excluded.</p></div><span class="spec-badge">Selected / Create</span></div>
+          <div class="spec-grid">
+            <div class="spec-cell spec-cell--2" style="padding:0;overflow:hidden">
+              <aside class="navigation-rail mini-rail" aria-label="Navigation rail specimen">
+                <div class="rail-wordmark"><img class="wordmark" src="assets/ntve-wordmark.svg" alt="ntve." /></div>
+                <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-library"/></svg><span>Library</span></button>
+                <button class="rail-item is-selected" tabindex="-1"><svg class="icon icon--20"><use href="#i-plus"/></svg><span>Create</span></button>
+                <div class="rail-spacer"></div>
+                <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-search"/></svg><span>Search</span></button>
+                <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-settings"/></svg><span>Settings</span></button>
+                <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-collapse"/></svg><span>Hide</span></button>
+              </aside>
+            </div>
+            <div class="spec-cell spec-cell--5"><span class="spec-label">Rail item / Default · Selected</span><div class="spec-row">
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-library"/></svg><span>Library</span></button>
+              <button class="rail-item is-selected" tabindex="-1"><svg class="icon icon--20"><use href="#i-plus"/></svg><span>Create</span></button>
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-search"/></svg><span>Search</span></button>
+            </div></div>
+            <div class="spec-cell spec-cell--5"><span class="spec-label">Library rows / Project · Task · Selected</span><div class="spec-stack">
+              <div class="project-row"><svg class="icon icon--16"><use href="#i-chevron-down"/></svg><svg class="icon icon--16"><use href="#i-folder"/></svg><span>Background Agent Counter</span><span class="project-row__count">3</span></div>
+              <div class="task-row"><span class="task-row__status"></span><div class="task-row__copy"><strong>Refine the timer card</strong><span>Edited 8 min ago</span></div></div>
+              <div class="task-row is-selected"><span class="task-row__status"></span><div class="task-row__copy"><strong>Build a focus dashboard</strong><span>Agent working · 2 files</span></div></div>
+            </div></div>
+          </div>
+        </article>
+      </section>
+      <section class="library-section" id="overlays" data-component="Components/Overlays">
+        <div class="section-heading">
+          <div><span class="section-kicker">04 / Overlays</span><h2>Library and command search</h2></div>
+          <p>Both overlay compositions are captured as static states for Figma. Their rail buttons remain visual only, matching the requested prototype boundary.</p>
+        </div>
+
+        <article class="spec-board" data-component="Library-Drawer/State=Open">
+          <div class="spec-header"><div><h3>Library drawer</h3><p>A full-height 360-point drawer over the landscape shell, starting immediately after the navigation rail.</p></div><span class="spec-badge">State / Open</span></div>
+          <div class="library-overlay-demo">
+            <div class="overlay-shell-hint" aria-hidden="true">
+              <aside class="navigation-rail">
+                <div class="rail-wordmark"><img class="wordmark" src="assets/ntve-wordmark.svg" alt="" /></div>
+                <button class="rail-item is-selected" tabindex="-1"><svg class="icon icon--20"><use href="#i-library"/></svg><span>Library</span></button>
+                <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-plus"/></svg><span>Create</span></button>
+                <div class="rail-spacer"></div>
+                <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-search"/></svg><span>Search</span></button>
+                <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-settings"/></svg><span>Settings</span></button>
+              </aside>
+              <div class="overlay-main-hint"></div>
+            </div>
+            <div class="library-scrim"></div>
+            <aside class="library-drawer" aria-label="Library drawer specimen">
+              <header class="drawer-header">
+                <img class="wordmark" src="assets/ntve-wordmark.svg" alt="ntve." />
+                <div class="drawer-header__title"><strong>Library</strong><span>Projects &amp; tasks</span></div>
+                <button class="icon-button" tabindex="-1" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button>
+              </header>
+              <div class="drawer-content">
+                <div class="drawer-actions">
+                  <button class="drawer-action-card is-primary" tabindex="-1"><span class="action-card__icon"><svg class="icon"><use href="#i-plus"/></svg></span><span>New Task</span></button>
+                  <button class="drawer-action-card" tabindex="-1"><span class="action-card__icon"><svg class="icon"><use href="#i-folder"/></svg></span><span>Add Project</span></button>
+                </div>
+                <div class="drawer-section-label"><span>In progress</span><span>2</span></div>
+                <div class="task-row is-selected" style="margin-left:0"><span class="task-row__status"></span><div class="task-row__copy"><strong>Build a focus dashboard</strong><span>Background Agent Counter · working</span></div><svg class="icon icon--16"><use href="#i-chevron-right"/></svg></div>
+                <div class="task-row" style="margin-left:0"><span class="task-row__status" style="background:var(--color-warning)"></span><div class="task-row__copy"><strong>Polish onboarding</strong><span>Orbit Notes · waiting</span></div><svg class="icon icon--16"><use href="#i-chevron-right"/></svg></div>
+                <div class="drawer-section-label"><span>Projects</span><span></span></div>
+                <div class="project-row"><svg class="icon icon--16"><use href="#i-chevron-down"/></svg><svg class="icon icon--16"><use href="#i-folder"/></svg><span>Background Agent Counter</span><span class="project-row__count">3</span></div>
+                <div class="task-row is-selected"><span class="task-row__status"></span><div class="task-row__copy"><strong>Build a focus dashboard</strong><span>Edited just now</span></div></div>
+                <div class="task-row"><span class="task-row__status" style="background:#a4a4a4"></span><div class="task-row__copy"><strong>Refine the timer card</strong><span>Edited yesterday</span></div></div>
+                <div class="project-row"><svg class="icon icon--16"><use href="#i-chevron-right"/></svg><svg class="icon icon--16"><use href="#i-folder"/></svg><span>Orbit Notes</span><span class="project-row__count">2</span></div>
+              </div>
+              <footer class="drawer-footer">
+                <div class="drawer-footer-row"><svg class="icon"><use href="#i-command"/></svg><span>Commands</span><span class="keyboard-key">⌘ K</span></div>
+              </footer>
+            </aside>
+          </div>
+        </article>
+
+        <article class="spec-board" data-component="Command-Palette/State=Search">
+          <div class="spec-header"><div><h3>Command search</h3><p>Centered at the upper third of the app with keyboard focus, grouped results, and a highlighted command.</p></div><span class="spec-badge">State / Typed + Highlighted</span></div>
+          <div class="command-overlay-demo">
+            <div class="overlay-shell-hint" aria-hidden="true">
+              <aside class="navigation-rail">
+                <div class="rail-wordmark"><img class="wordmark" src="assets/ntve-wordmark.svg" alt="" /></div>
+                <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-library"/></svg><span>Library</span></button>
+                <button class="rail-item is-selected" tabindex="-1"><svg class="icon icon--20"><use href="#i-plus"/></svg><span>Create</span></button>
+                <div class="rail-spacer"></div>
+                <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-search"/></svg><span>Search</span></button>
+              </aside>
+              <div class="overlay-main-hint"></div>
+            </div>
+            <div class="command-scrim">
+              <div class="command-palette">
+                <div class="command-search-wrap"><div class="command-search"><svg class="icon icon--20"><use href="#i-search"/></svg><span class="command-search__text">open</span><span class="keyboard-key">esc</span></div></div>
+                <div class="command-results">
+                  <div class="command-group">
+                    <div class="command-group__label">Actions</div>
+                    <div class="command-row is-highlighted"><span class="command-row__icon"><svg class="icon icon--16"><use href="#i-file"/></svg></span><div class="command-row__copy"><strong>Open code editor</strong><span>Show the project source beside this view</span></div><span class="command-row__shortcut"><span class="keyboard-key">↵</span></span></div>
+                    <div class="command-row"><span class="command-row__icon"><svg class="icon icon--16"><use href="#i-preview"/></svg></span><div class="command-row__copy"><strong>Open Preview</strong><span>Show the local app preview</span></div><span></span></div>
+                    <div class="command-row"><span class="command-row__icon"><svg class="icon icon--16"><use href="#i-folder"/></svg></span><div class="command-row__copy"><strong>Open project</strong><span>Background Agent Counter</span></div><span></span></div>
+                  </div>
+                  <div class="command-group">
+                    <div class="command-group__label">Appearance</div>
+                    <div class="command-row"><span class="command-row__icon"><svg class="icon icon--16"><use href="#i-palette"/></svg></span><div class="command-row__copy"><strong>Use Light appearance</strong><span>Current appearance</span></div><svg class="icon icon--16" style="color:var(--color-ring)"><use href="#i-check"/></svg></div>
+                  </div>
+                  <div class="command-group">
+                    <div class="command-group__label">Tasks</div>
+                    <div class="command-row"><span class="command-row__icon"><span class="status-dot"></span></span><div class="command-row__copy"><strong>Build a focus dashboard</strong><span>Background Agent Counter · Agent working</span></div><span></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="library-section" id="views" data-component="Components/Views">
+        <div class="section-heading">
+          <div><span class="section-kicker">05 / Main views</span><h2>Home and Agent</h2></div>
+          <p>Home is shown in the full composition below. This standalone Agent specimen keeps the conversation visible while the paired-panel composition demonstrates its native replacement behavior.</p>
+        </div>
+        <article class="spec-board" data-component="Agent-View/State=Working">
+          <div class="spec-header"><div><h3>Agent / conversation</h3><p>User prompt, process group, assistant response, metadata, response actions, and the persistent composer.</p></div><span class="spec-badge">State / Working</span></div>
+          <div class="view-specimen">
+            <section class="agent-view">
+              <div class="chat-scroll"><div class="chat-canvas"><div class="chat-column">
+                <div class="user-turn">Build a calm focus dashboard with a daily completion ring, simple habits, and a lightweight Light-mode design.</div>
+                <div class="assistant-turn"><p>I’ll shape this into a focused iPad experience and keep the visual hierarchy quiet. I’m starting with the model and the main dashboard.</p><div class="process-card"><div class="process-card__row"><span class="process-card__icon"><svg class="icon icon--16"><use href="#i-search"/></svg></span><div class="process-card__copy"><strong>Explored project structure</strong><span>14 files · SwiftUI package</span></div><svg class="icon icon--16"><use href="#i-check"/></svg></div><div class="process-card__row"><span class="process-card__icon"><svg class="icon icon--16"><use href="#i-file"/></svg></span><div class="process-card__copy"><strong>Edited ContentView.swift</strong><span>Added progress ring and habit list</span></div><svg class="icon icon--16"><use href="#i-check"/></svg></div><div class="process-card__row"><span class="process-card__icon"><svg class="icon icon--16"><use href="#i-terminal"/></svg></span><div class="process-card__copy"><strong>Checked the build</strong><span>Completed successfully</span></div><svg class="icon icon--16"><use href="#i-check"/></svg></div></div><p>The dashboard is in place. It uses a single source of truth for completion, a soft mint accent, and compact habit rows that stay comfortable at iPad size.</p><span class="turn-meta">3 files changed · 42s</span><div class="turn-actions"><button class="icon-button" tabindex="-1"><svg class="icon icon--16"><use href="#i-copy"/></svg></button><button class="icon-button" tabindex="-1"><svg class="icon icon--16"><use href="#i-thumb"/></svg></button></div></div>
+              </div></div></div>
+              <div class="chat-composer-wrap"><div class="chat-composer"><div class="chat-composer__field">Ask for a change…</div><div class="chat-composer__footer"><div class="composer-options"><button class="composer-pill" tabindex="-1">GPT-5.4<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button><button class="composer-pill" tabindex="-1">Default reasoning<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button></div><button class="composer-submit" tabindex="-1"><svg class="icon icon--20"><use href="#i-arrow-up"/></svg></button></div><div class="chat-status"><span class="status-dot"></span><span>Agent ready · Background Agent Counter</span></div></div></div>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <section class="library-section" id="panels" data-component="Components/Panels">
+        <div class="section-heading">
+          <div><span class="section-kicker">06 / Workspace panels</span><h2>Open and Preview</h2></div>
+          <p>The panels are retained layers around one shared divider. Open can replace the primary view; Preview always remains in the trailing panel slot.</p>
+        </div>
+
+        <article class="spec-board" data-component="Panel-State-Model">
+          <div class="spec-header"><div><h3>Panel composition states</h3><p>Default split shown at 60 / 40. The full app examples below let you open, close, and resize these states.</p></div><span class="spec-badge">Shared fraction / 40%</span></div>
+          <div class="panel-state-grid">
+            <div class="panel-state-card"><div class="panel-state-diagram"><div class="panel-state-diagram__primary">Home / Agent</div></div><strong>None</strong><span>Primary 100%</span></div>
+            <div class="panel-state-card"><div class="panel-state-diagram" style="--primary:1.5;--open:1;--open-border:1px"><div class="panel-state-diagram__primary">Home / Agent</div><div class="panel-state-diagram__open">Open</div></div><strong>Open only</strong><span>Primary 60 · Open 40</span></div>
+            <div class="panel-state-card"><div class="panel-state-diagram" style="--primary:1.5;--preview:1;--preview-border:1px"><div class="panel-state-diagram__primary">Home / Agent</div><div class="panel-state-diagram__preview">Preview</div></div><strong>Preview only</strong><span>Primary 60 · Preview 40</span></div>
+            <div class="panel-state-card"><div class="panel-state-diagram" style="--primary:0;--open:1.5;--preview:1;--preview-border:1px"><div class="panel-state-diagram__open">Open replaces primary</div><div class="panel-state-diagram__preview">Preview</div></div><strong>Both</strong><span>Open 60 · Preview 40</span></div>
+          </div>
+        </article>
+
+        <article class="spec-board" data-component="Open-Panel">
+          <div class="spec-header"><div><h3>Open / code editor</h3><p>Compact project navigator, independently resizable divider, tab strip, gutter, and Light-mode Swift syntax roles.</p></div><span class="spec-badge">Navigator / Visible</span></div>
+          <div class="spec-grid">
+            <div class="spec-cell spec-cell--7" style="padding:0;overflow:hidden">
+              <div class="panel-specimen">
+                <aside class="open-panel" data-component="Open-Panel/State=Compact-Navigator">
+                  <div class="open-panel__inner">
+                    <div class="quick-open-bar"><button class="icon-button icon-button--muted" tabindex="-1"><svg class="icon"><use href="#i-sidebar"/></svg></button><div class="search-field"><svg class="icon icon--16"><use href="#i-search"/></svg><span class="search-field__text">Search files</span><span class="keyboard-key">⌘ P</span></div></div>
+                    <div class="editor-workspace">
+                      <aside class="file-navigator" style="--navigator-width:220px">
+                        <div class="navigator-heading"><span>Explorer</span><svg class="icon icon--16"><use href="#i-more"/></svg></div>
+                        <div class="file-tree"><div class="file-row"><svg class="icon icon--16"><use href="#i-chevron-down"/></svg><svg class="icon icon--16"><use href="#i-folder"/></svg><span>FocusDashboard</span></div><div class="file-row file-row--nested"><svg class="icon icon--16"><use href="#i-chevron-down"/></svg><svg class="icon icon--16"><use href="#i-folder"/></svg><span>Sources</span></div><div class="file-row file-row--deep is-selected"><svg class="icon icon--16"><use href="#i-file"/></svg><span>ContentView.swift</span></div><div class="file-row file-row--deep"><svg class="icon icon--16"><use href="#i-file"/></svg><span>FocusModel.swift</span></div><div class="file-row file-row--deep"><svg class="icon icon--16"><use href="#i-file"/></svg><span>Theme.swift</span></div><div class="file-row file-row--nested"><svg class="icon icon--16"><use href="#i-folder"/></svg><span>Assets.xcassets</span></div><div class="file-row"><svg class="icon icon--16"><use href="#i-file"/></svg><span>Package.swift</span></div></div>
+                      </aside>
+                      <button class="navigator-resize" style="--navigator-width:220px" tabindex="-1" aria-label="Navigator resize specimen"></button>
+                      <div class="code-editor">
+                        <div class="editor-tabs"><div class="editor-tab">ContentView.swift</div></div>
+                        <div class="code-viewport">
+                          <div class="code-line"><span class="code-line__number">1</span><span><span class="syntax-keyword">import</span> <span class="syntax-type">SwiftUI</span></span></div>
+                          <div class="code-line"><span class="code-line__number">2</span><span></span></div>
+                          <div class="code-line"><span class="code-line__number">3</span><span><span class="syntax-keyword">struct</span> <span class="syntax-type">FocusDashboard</span>: <span class="syntax-type">View</span> {</span></div>
+                          <div class="code-line"><span class="code-line__number">4</span><span>  <span class="syntax-attribute">@State</span> <span class="syntax-keyword">private var</span> streak = <span class="syntax-number">12</span></span></div>
+                          <div class="code-line"><span class="code-line__number">5</span><span></span></div>
+                          <div class="code-line"><span class="code-line__number">6</span><span>  <span class="syntax-keyword">var</span> body: <span class="syntax-keyword">some</span> <span class="syntax-type">View</span> {</span></div>
+                          <div class="code-line"><span class="code-line__number">7</span><span>    <span class="syntax-type">NavigationStack</span> {</span></div>
+                          <div class="code-line"><span class="code-line__number">8</span><span>      <span class="syntax-type">VStack</span>(spacing: <span class="syntax-number">24</span>) {</span></div>
+                          <div class="code-line"><span class="code-line__number">9</span><span>        <span class="syntax-type">ProgressRing</span>(value: <span class="syntax-number">0.76</span>)</span></div>
+                          <div class="code-line"><span class="code-line__number">10</span><span>        <span class="syntax-type">Text</span>(<span class="syntax-string">&quot;Your daily rhythm&quot;</span>)</span></div>
+                          <div class="code-line"><span class="code-line__number">11</span><span>          .font(.title.bold())</span></div>
+                          <div class="code-line"><span class="code-line__number">12</span><span>      }</span></div>
+                          <div class="code-line"><span class="code-line__number">13</span><span>      .padding(<span class="syntax-number">24</span>)</span></div>
+                          <div class="code-line"><span class="code-line__number">14</span><span>    }</span></div>
+                          <div class="code-line"><span class="code-line__number">15</span><span>  }</span></div>
+                          <div class="code-line"><span class="code-line__number">16</span><span>}</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+            <div class="spec-cell spec-cell--5"><span class="spec-label">Open / anatomy</span><div class="spec-stack">
+              <div class="project-row"><span class="token-code">01</span><span>Quick-open toolbar</span><span class="project-row__count">64 px</span></div>
+              <div class="project-row"><span class="token-code">02</span><span>Compact navigator</span><span class="project-row__count">240 px default</span></div>
+              <div class="project-row"><span class="token-code">03</span><span>Navigator divider</span><span class="project-row__count">12 / 4 × 44</span></div>
+              <div class="project-row"><span class="token-code">04</span><span>Tab strip</span><span class="project-row__count">44 px</span></div>
+              <div class="project-row"><span class="token-code">05</span><span>Source editor</span><span class="project-row__count">SF Mono 14</span></div>
+            </div></div>
+          </div>
+        </article>
+
+        <article class="spec-board" data-component="Preview-Panel">
+          <div class="spec-header"><div><h3>Preview / local app</h3><p>A successful filler app replaces the simulator’s project-specific output while preserving Preview’s native panel structure.</p></div><span class="spec-badge">State / Rendered</span></div>
+          <div class="spec-grid">
+            <div class="spec-cell spec-cell--5" style="padding:0;overflow:hidden">
+              <div class="panel-specimen">
+                <aside class="preview-panel" data-component="Preview-Panel/State=Rendered">
+                  <div class="preview-panel__inner">
+                    <div class="preview-banner"><span class="preview-banner__icon"><svg class="icon icon--16"><use href="#i-info"/></svg></span><div class="preview-banner__copy"><strong>Local Preview</strong><span>Rendered from the current project</span></div></div>
+                    <div class="preview-stage"><div class="filler-app">
+                      <div class="filler-app__bar"><div class="filler-brand"><span class="filler-brand__mark">P</span><span>Pulse</span></div><span class="filler-avatar">PM</span></div>
+                      <div class="filler-app__content"><span class="filler-app__eyebrow">Wednesday, September 2</span><h3>Your daily rhythm</h3><p class="filler-app__subcopy">Small steps, beautifully consistent.</p><div class="filler-progress"><div class="filler-progress__copy"><strong>76%</strong><span>completed</span></div></div><div class="habit-list"><div class="habit-row"><span class="habit-check"><svg class="icon icon--16"><use href="#i-check"/></svg></span><div><strong>Morning focus</strong><span>45 minute session</span></div><span class="habit-streak">12 days</span></div><div class="habit-row"><span class="habit-check"><svg class="icon icon--16"><use href="#i-check"/></svg></span><div><strong>Move outdoors</strong><span>20 minute walk</span></div><span class="habit-streak">8 days</span></div><div class="habit-row"><span class="habit-check" style="background:#eef3f2;color:#9aa5a9"><span>○</span></span><div><strong>Read &amp; reflect</strong><span>Evening ritual</span></div><span class="habit-streak">Later</span></div></div></div>
+                    </div></div>
+                    <div class="preview-footer"><span class="preview-footer__status"><span class="status-dot"></span>Live Preview</span><span>iPad · Light</span></div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+            <div class="spec-cell spec-cell--7"><span class="spec-label">Preview / anatomy</span><div class="spec-grid">
+              <div class="spec-cell spec-cell--6"><span class="spec-label">Approximation banner</span><div class="preview-banner" style="border:1px solid var(--color-border);border-radius:12px"><span class="preview-banner__icon"><svg class="icon icon--16"><use href="#i-info"/></svg></span><div class="preview-banner__copy"><strong>Local Preview</strong><span>Rendered from current source</span></div></div></div>
+              <div class="spec-cell spec-cell--6"><span class="spec-label">Diagnostics footer</span><div class="preview-footer" style="height:44px;border:1px solid var(--color-border);border-radius:12px"><span class="preview-footer__status"><span class="status-dot"></span>Live Preview</span><span>iPad · Light</span></div></div>
+              <div class="spec-cell spec-cell--12"><span class="spec-label">Panel contract</span><p style="margin:0;color:var(--color-muted-foreground);font-size:14px;line-height:21px">At landscape widths, the Preview header is removed. Reload and expand live beside the selected Preview button in the 68-point app bar. The rendered app uses the remaining panel height.</p></div>
+            </div></div>
+          </div>
+        </article>
+      </section>
+      <section class="library-section" id="compositions" data-component="Compositions">
+        <div class="section-heading">
+          <div><span class="section-kicker">07 / Compositions</span><h2>Landscape app frames</h2></div>
+          <p>Two canonical 1376 × 1032 frames: Home starts clear; Agent starts with Open and Preview together so the native replacement behavior is visible immediately.</p>
+        </div>
+        <div class="interaction-note"><svg class="icon icon--20"><use href="#i-info"/></svg><span>Only <strong>Open</strong>, <strong>Preview</strong>, and the two vertical resize handles respond. Run, navigation, search, fields, and editor controls are visual-only.</span></div>
+
+        <div class="app-frame-wrap" id="home-landscape-frame" data-component="App/Home">
+          <div class="app-shell" data-panel-demo="home-light-landscape" data-open="false" data-preview="false">
+            <aside class="navigation-rail" aria-label="Main navigation">
+              <div class="rail-wordmark"><img class="wordmark" src="assets/ntve-wordmark.svg" alt="ntve." /></div>
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-library"/></svg><span>Library</span></button>
+              <button class="rail-item is-selected" tabindex="-1"><svg class="icon icon--20"><use href="#i-plus"/></svg><span>Create</span></button>
+              <div class="rail-spacer"></div>
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-search"/></svg><span>Search</span></button>
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-settings"/></svg><span>Settings</span></button>
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-collapse"/></svg><span>Hide</span></button>
+            </aside>
+            <main class="main-card">
+              <header class="app-bar">
+                <div class="app-bar__identity"><span class="app-bar__icon-tile"><svg class="icon icon--20"><use href="#i-sparkles"/></svg></span><div class="app-bar__copy"><div class="app-bar__title">Create</div><div class="app-bar__subtitle">Background Agent Counter</div></div></div>
+                <div class="app-bar__actions">
+                  <div class="app-bar__action-block">
+                    <button class="shell-toggle" data-panel-toggle="open" data-label-unselected="Open code editor" data-label-selected="Close code editor"><svg class="icon icon--16"><use href="#i-file"/></svg>Open<span class="shell-toggle__close">×</span></button>
+                    <div class="toolbar-group open-actions"><button class="icon-button" tabindex="-1" aria-label="Save"><svg class="icon icon--16"><use href="#i-save"/></svg></button><button class="icon-button" tabindex="-1" aria-label="Refresh"><svg class="icon icon--16"><use href="#i-refresh"/></svg></button><button class="icon-button" tabindex="-1" aria-label="Expand"><svg class="icon icon--16"><use href="#i-expand"/></svg></button></div>
+                  </div>
+                  <div class="app-bar__action-block">
+                    <button class="shell-toggle" data-panel-toggle="preview" data-label-unselected="Open Preview panel" data-label-selected="Close Preview panel"><svg class="icon icon--16"><use href="#i-preview"/></svg>Preview<span class="shell-toggle__close">×</span></button>
+                    <div class="toolbar-group preview-actions"><button class="icon-button" tabindex="-1" aria-label="Reload"><svg class="icon icon--16"><use href="#i-refresh"/></svg></button><button class="icon-button" tabindex="-1" aria-label="Expand"><svg class="icon icon--16"><use href="#i-expand"/></svg></button></div>
+                  </div>
+                  <button class="shell-toggle" tabindex="-1"><svg class="icon icon--16"><use href="#i-run"/></svg>Run<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button>
+                </div>
+              </header>
+
+              <div class="route-stage" data-panel-shell>
+                <section class="primary-view home-view" data-panel-layer="primary">
+                  <div class="home-content">
+                    <div class="home-main">
+                      <div class="home-hero"><span class="home-kicker">New session</span><h2>What do you want<br />to make?</h2><p>Turn an idea into a working app, understand an existing project, or ask the agent to make a focused change.</p><button class="project-picker" tabindex="-1"><svg class="icon"><use href="#i-folder"/></svg><span>Background Agent Counter</span><svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button></div>
+                      <h3 class="composer-heading">Brief the agent</h3>
+                      <div class="prompt-composer"><div class="prompt-composer__field">Describe what you want to build or change…</div><div class="prompt-composer__footer"><div class="composer-options"><button class="composer-pill" tabindex="-1"><svg class="icon icon--16"><use href="#i-hammer"/></svg>Build</button><button class="composer-pill" tabindex="-1">GPT-5.4<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button><button class="composer-pill" tabindex="-1">Default reasoning<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button></div><button class="composer-submit" tabindex="-1" aria-label="Send"><svg class="icon icon--20"><use href="#i-arrow-up"/></svg></button></div></div>
+                    </div>
+                    <aside class="home-side">
+                      <div class="surface-card workspace-card"><div class="card-heading-row"><h3>Workspace</h3><span>Ready</span></div><div class="workspace-metrics"><div class="metric-cell"><strong>14</strong><span>Files</span></div><div class="metric-cell"><strong>3</strong><span>Sessions</span></div></div></div>
+                      <div class="quick-starts"><h3>Quick start</h3><div class="quick-card"><span class="quick-card__icon"><svg class="icon"><use href="#i-hammer"/></svg></span><div class="quick-card__copy"><strong>Build</strong><span>Create a new feature</span></div><svg class="icon icon--16"><use href="#i-chevron-right"/></svg></div><div class="quick-card"><span class="quick-card__icon"><svg class="icon"><use href="#i-lightbulb"/></svg></span><div class="quick-card__copy"><strong>Understand</strong><span>Explore how it works</span></div><svg class="icon icon--16"><use href="#i-chevron-right"/></svg></div><div class="quick-card"><span class="quick-card__icon"><svg class="icon"><use href="#i-check"/></svg></span><div class="quick-card__copy"><strong>Review</strong><span>Check the current code</span></div><svg class="icon icon--16"><use href="#i-chevron-right"/></svg></div><div class="quick-card"><span class="quick-card__icon"><svg class="icon"><use href="#i-wand"/></svg></span><div class="quick-card__copy"><strong>Reimagine</strong><span>Try a fresh direction</span></div><svg class="icon icon--16"><use href="#i-chevron-right"/></svg></div></div>
+                      <div class="surface-card recent-card"><div class="card-heading-row"><h3>Recent work</h3><span>View all</span></div><div class="recent-row"><span class="status-dot"></span><strong>Timer card polish</strong><span>8m</span></div><div class="recent-row"><span class="status-dot" style="background:#a4a4a4;box-shadow:none"></span><strong>Accessibility pass</strong><span>1d</span></div></div>
+                    </aside>
+                  </div>
+                </section>
+
+                <aside class="open-panel" data-panel-layer="open" data-navigator-mode="compact">
+                  <div class="open-panel__inner">
+                    <div class="quick-open-bar"><button class="icon-button icon-button--muted" tabindex="-1"><svg class="icon"><use href="#i-sidebar"/></svg></button><div class="search-field"><svg class="icon icon--16"><use href="#i-search"/></svg><span class="search-field__text">Search files</span><span class="keyboard-key">⌘ P</span></div></div>
+                    <div class="editor-workspace">
+                      <aside class="file-navigator"><div class="navigator-heading"><span>Explorer</span><svg class="icon icon--16"><use href="#i-more"/></svg></div><div class="file-tree"><div class="file-row"><svg class="icon icon--16"><use href="#i-chevron-down"/></svg><svg class="icon icon--16"><use href="#i-folder"/></svg><span>BackgroundAgentCounter</span></div><div class="file-row file-row--nested"><svg class="icon icon--16"><use href="#i-chevron-down"/></svg><svg class="icon icon--16"><use href="#i-folder"/></svg><span>Sources</span></div><div class="file-row file-row--deep is-selected"><svg class="icon icon--16"><use href="#i-file"/></svg><span>ContentView.swift</span></div><div class="file-row file-row--deep"><svg class="icon icon--16"><use href="#i-file"/></svg><span>FocusModel.swift</span></div><div class="file-row file-row--deep"><svg class="icon icon--16"><use href="#i-file"/></svg><span>Theme.swift</span></div><div class="file-row file-row--nested"><svg class="icon icon--16"><use href="#i-folder"/></svg><span>Assets.xcassets</span></div><div class="file-row"><svg class="icon icon--16"><use href="#i-file"/></svg><span>Package.swift</span></div></div></aside>
+                      <button class="navigator-resize" data-navigator-resize aria-label="Resize file navigator"></button>
+                      <div class="code-editor"><div class="editor-tabs"><div class="editor-tab">ContentView.swift</div></div><div class="code-viewport">
+                        <div class="code-line"><span class="code-line__number">1</span><span><span class="syntax-keyword">import</span> <span class="syntax-type">SwiftUI</span></span></div><div class="code-line"><span class="code-line__number">2</span><span></span></div><div class="code-line"><span class="code-line__number">3</span><span><span class="syntax-keyword">struct</span> <span class="syntax-type">FocusDashboard</span>: <span class="syntax-type">View</span> {</span></div><div class="code-line"><span class="code-line__number">4</span><span>  <span class="syntax-attribute">@State</span> <span class="syntax-keyword">private var</span> streak = <span class="syntax-number">12</span></span></div><div class="code-line"><span class="code-line__number">5</span><span></span></div><div class="code-line"><span class="code-line__number">6</span><span>  <span class="syntax-keyword">var</span> body: <span class="syntax-keyword">some</span> <span class="syntax-type">View</span> {</span></div><div class="code-line"><span class="code-line__number">7</span><span>    <span class="syntax-type">NavigationStack</span> {</span></div><div class="code-line"><span class="code-line__number">8</span><span>      <span class="syntax-type">VStack</span>(spacing: <span class="syntax-number">24</span>) {</span></div><div class="code-line"><span class="code-line__number">9</span><span>        <span class="syntax-type">ProgressRing</span>(value: <span class="syntax-number">0.76</span>)</span></div><div class="code-line"><span class="code-line__number">10</span><span>        <span class="syntax-type">Text</span>(<span class="syntax-string">&quot;Your daily rhythm&quot;</span>)</span></div><div class="code-line"><span class="code-line__number">11</span><span>      }</span></div><div class="code-line"><span class="code-line__number">12</span><span>      .padding(<span class="syntax-number">24</span>)</span></div><div class="code-line"><span class="code-line__number">13</span><span>    }</span></div><div class="code-line"><span class="code-line__number">14</span><span>  }</span></div><div class="code-line"><span class="code-line__number">15</span><span>}</span></div>
+                      </div></div>
+                    </div>
+                  </div>
+                </aside>
+
+                <aside class="preview-panel" data-panel-layer="preview">
+                  <div class="preview-panel__inner"><div class="preview-banner"><span class="preview-banner__icon"><svg class="icon icon--16"><use href="#i-info"/></svg></span><div class="preview-banner__copy"><strong>Local Preview</strong><span>Rendered from the current project</span></div></div><div class="preview-stage"><div class="filler-app"><div class="filler-app__bar"><div class="filler-brand"><span class="filler-brand__mark">P</span><span>Pulse</span></div><span class="filler-avatar">PM</span></div><div class="filler-app__content"><span class="filler-app__eyebrow">Wednesday, September 2</span><h3>Your daily rhythm</h3><p class="filler-app__subcopy">Small steps, beautifully consistent.</p><div class="filler-progress"><div class="filler-progress__copy"><strong>76%</strong><span>completed</span></div></div><div class="habit-list"><div class="habit-row"><span class="habit-check"><svg class="icon icon--16"><use href="#i-check"/></svg></span><div><strong>Morning focus</strong><span>45 minute session</span></div><span class="habit-streak">12 days</span></div><div class="habit-row"><span class="habit-check"><svg class="icon icon--16"><use href="#i-check"/></svg></span><div><strong>Move outdoors</strong><span>20 minute walk</span></div><span class="habit-streak">8 days</span></div><div class="habit-row"><span class="habit-check" style="background:#eef3f2;color:#9aa5a9">○</span><div><strong>Read &amp; reflect</strong><span>Evening ritual</span></div><span class="habit-streak">Later</span></div></div></div></div></div><div class="preview-footer"><span class="preview-footer__status"><span class="status-dot"></span>Live Preview</span><span>iPad · Light</span></div></div>
+                </aside>
+
+                <button class="shell-resize" data-panel-resize aria-label="Resize panel"></button>
+              </div>
+            </main>
+          </div>
+        </div>
+        <div class="app-caption"><strong>App / Home</strong><span>1376 × 1032 · panels closed</span></div>
+
+        <div class="app-frame-wrap" id="agent-landscape-frame" style="margin-top:72px" data-component="App/Agent/Open+Preview">
+          <div class="app-shell" data-panel-demo="agent-light-landscape" data-open="true" data-preview="true">
+            <aside class="navigation-rail" aria-label="Main navigation">
+              <div class="rail-wordmark"><img class="wordmark" src="assets/ntve-wordmark.svg" alt="ntve." /></div>
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-library"/></svg><span>Library</span></button>
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-plus"/></svg><span>Create</span></button>
+              <div class="rail-spacer"></div>
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-search"/></svg><span>Search</span></button>
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-settings"/></svg><span>Settings</span></button>
+              <button class="rail-item" tabindex="-1"><svg class="icon icon--20"><use href="#i-collapse"/></svg><span>Hide</span></button>
+            </aside>
+            <main class="main-card">
+              <header class="app-bar">
+                <div class="app-bar__identity"><span class="status-dot"></span><div class="app-bar__copy"><div class="app-bar__title">Build a focus dashboard</div><div class="app-bar__subtitle">Background Agent Counter · Agent working</div></div></div>
+                <div class="app-bar__actions">
+                  <div class="app-bar__action-block"><button class="shell-toggle" data-panel-toggle="open" data-label-unselected="Open code editor" data-label-selected="Close code editor"><svg class="icon icon--16"><use href="#i-file"/></svg>Open<span class="shell-toggle__close">×</span></button><div class="toolbar-group open-actions"><button class="icon-button" tabindex="-1" aria-label="Save"><svg class="icon icon--16"><use href="#i-save"/></svg></button><button class="icon-button" tabindex="-1" aria-label="Refresh"><svg class="icon icon--16"><use href="#i-refresh"/></svg></button><button class="icon-button" tabindex="-1" aria-label="Expand"><svg class="icon icon--16"><use href="#i-expand"/></svg></button></div></div>
+                  <div class="app-bar__action-block"><button class="shell-toggle" data-panel-toggle="preview" data-label-unselected="Open Preview panel" data-label-selected="Close Preview panel"><svg class="icon icon--16"><use href="#i-preview"/></svg>Preview<span class="shell-toggle__close">×</span></button><div class="toolbar-group preview-actions"><button class="icon-button" tabindex="-1" aria-label="Reload"><svg class="icon icon--16"><use href="#i-refresh"/></svg></button><button class="icon-button" tabindex="-1" aria-label="Expand"><svg class="icon icon--16"><use href="#i-expand"/></svg></button></div></div>
+                  <button class="shell-toggle" tabindex="-1"><svg class="icon icon--16"><use href="#i-run"/></svg>Run<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button>
+                  <button class="icon-button" tabindex="-1" aria-label="More"><svg class="icon"><use href="#i-more"/></svg></button>
+                </div>
+              </header>
+
+              <div class="route-stage" data-panel-shell>
+                <section class="primary-view agent-view" data-panel-layer="primary">
+                  <div class="chat-scroll"><div class="chat-canvas"><div class="chat-column">
+                    <div class="user-turn">Build a calm focus dashboard with a daily completion ring, simple habits, and a lightweight Light-mode design.</div>
+                    <div class="assistant-turn"><p>I’ll shape this into a focused iPad experience and keep the visual hierarchy quiet. I’m starting with the model and the main dashboard, then I’ll wire the habit rows into the shared progress state.</p><div class="process-card"><div class="process-card__row"><span class="process-card__icon"><svg class="icon icon--16"><use href="#i-search"/></svg></span><div class="process-card__copy"><strong>Explored project structure</strong><span>14 files · SwiftUI package</span></div><svg class="icon icon--16"><use href="#i-check"/></svg></div><div class="process-card__row"><span class="process-card__icon"><svg class="icon icon--16"><use href="#i-file"/></svg></span><div class="process-card__copy"><strong>Edited ContentView.swift</strong><span>Added progress ring and habit list</span></div><svg class="icon icon--16"><use href="#i-check"/></svg></div><div class="process-card__row"><span class="process-card__icon"><svg class="icon icon--16"><use href="#i-terminal"/></svg></span><div class="process-card__copy"><strong>Checked the build</strong><span>Completed successfully</span></div><svg class="icon icon--16"><use href="#i-check"/></svg></div></div><p>The dashboard is in place. It uses a single source of truth for completion, a soft mint accent, and compact habit rows that still feel comfortable at iPad size.</p><span class="turn-meta">3 files changed · 42s</span><div class="turn-actions"><button class="icon-button" tabindex="-1"><svg class="icon icon--16"><use href="#i-copy"/></svg></button><button class="icon-button" tabindex="-1"><svg class="icon icon--16"><use href="#i-thumb"/></svg></button></div></div>
+                  </div></div></div>
+                  <div class="chat-composer-wrap"><div class="chat-composer"><div class="chat-composer__field">Ask for a change…</div><div class="chat-composer__footer"><div class="composer-options"><button class="composer-pill" tabindex="-1">GPT-5.4<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button><button class="composer-pill" tabindex="-1">Default reasoning<svg class="icon icon--16"><use href="#i-chevron-down"/></svg></button></div><button class="composer-submit" tabindex="-1"><svg class="icon icon--20"><use href="#i-arrow-up"/></svg></button></div><div class="chat-status"><span class="status-dot"></span><span>Agent ready · Background Agent Counter</span></div></div></div>
+                </section>
+
+                <aside class="open-panel" data-panel-layer="open" data-navigator-mode="compact">
+                  <div class="open-panel__inner"><div class="quick-open-bar"><button class="icon-button icon-button--muted" tabindex="-1"><svg class="icon"><use href="#i-sidebar"/></svg></button><div class="search-field"><svg class="icon icon--16"><use href="#i-search"/></svg><span class="search-field__text">Search files</span><span class="keyboard-key">⌘ P</span></div></div><div class="editor-workspace">
+                    <aside class="file-navigator"><div class="navigator-heading"><span>Explorer</span><svg class="icon icon--16"><use href="#i-more"/></svg></div><div class="file-tree"><div class="file-row"><svg class="icon icon--16"><use href="#i-chevron-down"/></svg><svg class="icon icon--16"><use href="#i-folder"/></svg><span>BackgroundAgentCounter</span></div><div class="file-row file-row--nested"><svg class="icon icon--16"><use href="#i-chevron-down"/></svg><svg class="icon icon--16"><use href="#i-folder"/></svg><span>Sources</span></div><div class="file-row file-row--deep is-selected"><svg class="icon icon--16"><use href="#i-file"/></svg><span>ContentView.swift</span></div><div class="file-row file-row--deep"><svg class="icon icon--16"><use href="#i-file"/></svg><span>FocusModel.swift</span></div><div class="file-row file-row--deep"><svg class="icon icon--16"><use href="#i-file"/></svg><span>Theme.swift</span></div><div class="file-row file-row--nested"><svg class="icon icon--16"><use href="#i-folder"/></svg><span>Assets.xcassets</span></div><div class="file-row"><svg class="icon icon--16"><use href="#i-file"/></svg><span>Package.swift</span></div></div></aside>
+                    <button class="navigator-resize" data-navigator-resize aria-label="Resize file navigator"></button>
+                    <div class="code-editor"><div class="editor-tabs"><div class="editor-tab">ContentView.swift</div></div><div class="code-viewport"><div class="code-line"><span class="code-line__number">1</span><span><span class="syntax-keyword">import</span> <span class="syntax-type">SwiftUI</span></span></div><div class="code-line"><span class="code-line__number">2</span><span></span></div><div class="code-line"><span class="code-line__number">3</span><span><span class="syntax-keyword">struct</span> <span class="syntax-type">FocusDashboard</span>: <span class="syntax-type">View</span> {</span></div><div class="code-line"><span class="code-line__number">4</span><span>  <span class="syntax-attribute">@State</span> <span class="syntax-keyword">private var</span> streak = <span class="syntax-number">12</span></span></div><div class="code-line"><span class="code-line__number">5</span><span></span></div><div class="code-line"><span class="code-line__number">6</span><span>  <span class="syntax-keyword">var</span> body: <span class="syntax-keyword">some</span> <span class="syntax-type">View</span> {</span></div><div class="code-line"><span class="code-line__number">7</span><span>    <span class="syntax-type">NavigationStack</span> {</span></div><div class="code-line"><span class="code-line__number">8</span><span>      <span class="syntax-type">VStack</span>(spacing: <span class="syntax-number">24</span>) {</span></div><div class="code-line"><span class="code-line__number">9</span><span>        <span class="syntax-type">ProgressRing</span>(value: <span class="syntax-number">0.76</span>)</span></div><div class="code-line"><span class="code-line__number">10</span><span>        <span class="syntax-type">Text</span>(<span class="syntax-string">&quot;Your daily rhythm&quot;</span>)</span></div><div class="code-line"><span class="code-line__number">11</span><span>          .font(.title.bold())</span></div><div class="code-line"><span class="code-line__number">12</span><span>        <span class="syntax-type">HabitList</span>()</span></div><div class="code-line"><span class="code-line__number">13</span><span>      }</span></div><div class="code-line"><span class="code-line__number">14</span><span>      .padding(<span class="syntax-number">24</span>)</span></div><div class="code-line"><span class="code-line__number">15</span><span>    }</span></div><div class="code-line"><span class="code-line__number">16</span><span>  }</span></div><div class="code-line"><span class="code-line__number">17</span><span>}</span></div></div></div>
+                  </div></div>
+                </aside>
+
+                <aside class="preview-panel" data-panel-layer="preview"><div class="preview-panel__inner"><div class="preview-banner"><span class="preview-banner__icon"><svg class="icon icon--16"><use href="#i-info"/></svg></span><div class="preview-banner__copy"><strong>Local Preview</strong><span>Rendered from the current project</span></div></div><div class="preview-stage"><div class="filler-app"><div class="filler-app__bar"><div class="filler-brand"><span class="filler-brand__mark">P</span><span>Pulse</span></div><span class="filler-avatar">PM</span></div><div class="filler-app__content"><span class="filler-app__eyebrow">Wednesday, September 2</span><h3>Your daily rhythm</h3><p class="filler-app__subcopy">Small steps, beautifully consistent.</p><div class="filler-progress"><div class="filler-progress__copy"><strong>76%</strong><span>completed</span></div></div><div class="habit-list"><div class="habit-row"><span class="habit-check"><svg class="icon icon--16"><use href="#i-check"/></svg></span><div><strong>Morning focus</strong><span>45 minute session</span></div><span class="habit-streak">12 days</span></div><div class="habit-row"><span class="habit-check"><svg class="icon icon--16"><use href="#i-check"/></svg></span><div><strong>Move outdoors</strong><span>20 minute walk</span></div><span class="habit-streak">8 days</span></div><div class="habit-row"><span class="habit-check" style="background:#eef3f2;color:#9aa5a9">○</span><div><strong>Read &amp; reflect</strong><span>Evening ritual</span></div><span class="habit-streak">Later</span></div></div></div></div></div><div class="preview-footer"><span class="preview-footer__status"><span class="status-dot"></span>Live Preview</span><span>iPad · Light</span></div></div></aside>
+                <button class="shell-resize" data-panel-resize aria-label="Resize panel"></button>
+              </div>
+            </main>
+          </div>
+        </div>
+        <div class="app-caption"><strong>App / Agent / Open + Preview</strong><span>1376 × 1032 · shared split 60 / 40</span></div>
+
+        <footer style="margin-top:88px;padding:30px;border-top:1px solid var(--color-border);color:var(--color-muted-foreground);font-size:14px;line-height:22px;text-align:center">
+          NTVE · Light landscape component library · Settings view intentionally excluded
+        </footer>
+      </section>
+    </main>
+    <script src="scripts/panels.js"></script>
+  </body>
+</html>
